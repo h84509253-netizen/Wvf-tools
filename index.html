@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090a0c">
+  <meta name="description" content="WVF TOOLS — бесплатные инструменты для идей, профилей и промптов.">
+  <title>WVF TOOLS — Creative Toolkit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="WVF TOOLS — главная"><span class="brand-mark">W</span><span>WVF<span class="muted"> TOOLS</span></span></a>
+    <nav class="topnav"><a href="#tools">Инструменты</a><a href="#about">О проекте</a></nav>
+    <a class="top-cta" href="#tools">Попробовать <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="live-dot"></span> CREATIVE TOOLKIT <span class="eyebrow-line"></span> БЕСПЛАТНО</div>
+      <h1>Идеи становятся<br><span class="metal-text">инструментами.</span></h1>
+      <p class="hero-copy">Три простых инструмента для тех, кто создаёт проекты, контент и цифровые продукты. Без регистрации и платных API.</p>
+      <div class="hero-actions"><a class="button button-light" href="#tools">Открыть инструменты <span>↓</span></a><span class="micro-note"><span class="check">✓</span> Работает прямо в браузере</span></div>
+      <div class="hero-stats"><div><strong>03</strong><span>инструмента</span></div><i></i><div><strong>0 ₽</strong><span>стоимость старта</span></div><i></i><div><strong>100%</strong><span>без API-ключа</span></div></div>
+      <div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div>
+    </section>
+
+    <section class="tools-section" id="tools">
+      <div class="section-heading"><div><div class="eyebrow">YOUR WORKSPACE</div><h2>Рабочая панель<span class="silver-dot">.</span></h2></div><span class="section-count">01 — 03</span></div>
+      <div class="tool-tabs" role="tablist" aria-label="Выбор инструмента">
+        <button class="tab active" data-tab="prompt" role="tab" aria-selected="true"><span class="tab-icon">✳</span><span><b>Prompt Builder</b><small>Конструктор промптов</small></span><span class="tab-arrow">↗</span></button>
+        <button class="tab" data-tab="names" role="tab" aria-selected="false"><span class="tab-icon">⌘</span><span><b>Name Studio</b><small>Генератор названий</small></span><span class="tab-arrow">↗</span></button>
+        <button class="tab" data-tab="bio" role="tab" aria-selected="false"><span class="tab-icon">▤</span><span><b>Bio Maker</b><small>Описание профиля</small></span><span class="tab-arrow">↗</span></button>
+      </div>
+
+      <div class="workspace">
+        <div class="workspace-head"><div><span class="workspace-indicator"></span><span id="workspace-kicker">TOOL / 01</span><h3 id="workspace-title">Prompt Builder</h3></div><span class="local-badge"><span>●</span> LOCAL MODE</span></div>
+
+        <section class="tool-panel" id="panel-prompt">
+          <p class="panel-intro">Собери чёткий промпт за пару шагов. Заполни поля — и получи готовую инструкцию для ИИ.</p>
+          <div class="form-grid">
+            <label class="field field-wide"><span>ЧТО НУЖНО СДЕЛАТЬ?</span><textarea id="p-task" rows="3" placeholder="Например: придумай контент-план для Telegram-канала о технологиях"></textarea></label>
+            <label class="field"><span>РОЛЬ ИИ</span><select id="p-role"><option>Опытный специалист</option><option>Креативный маркетолог</option><option>Веб-разработчик</option><option>Дизайнер интерфейсов</option><option>Преподаватель</option><option>Копирайтер</option></select></label>
+            <label class="field"><span>ТОН ОТВЕТА</span><select id="p-tone"><option>Понятный и конкретный</option><option>Дружелюбный</option><option>Профессиональный</option><option>Краткий и лаконичный</option><option>Креативный</option></select></label>
+            <label class="field field-wide"><span>ДЕТАЛИ И ОГРАНИЧЕНИЯ <em>НЕОБЯЗАТЕЛЬНО</em></span><textarea id="p-details" rows="2" placeholder="Аудитория, формат, длина, что обязательно учесть…"></textarea></label>
+          </div>
+          <div class="panel-actions"><button class="button button-light" id="make-prompt">Собрать промпт <span>↗</span></button><button class="button button-quiet" id="clear-prompt">Очистить</button></div>
+          <div class="result-box" id="prompt-result" hidden><div class="result-head"><span>ГОТОВЫЙ ПРОМПТ</span><span class="result-ready">● READY</span></div><pre id="prompt-output"></pre><button class="button button-outline copy-btn" data-copy="prompt-output">Копировать промпт <span>▣</span></button></div>
+        </section>
+
+        <section class="tool-panel" id="panel-names" hidden>
+          <p class="panel-intro">Создай идеи для названия канала, бренда, приложения или цифрового проекта.</p>
+          <div class="form-grid">
+            <label class="field field-wide"><span>ТЕМА ИЛИ НИША</span><input id="n-topic" placeholder="Например: технологии, дизайн, игры"></label>
+            <label class="field"><span>СТИЛЬ</span><select id="n-style"><option value="modern">Современный</option><option value="tech">Технологичный</option><option value="premium">Премиальный</option><option value="short">Короткий и минималистичный</option><option value="playful">Игровой и яркий</option></select></label>
+            <label class="field"><span>КОЛИЧЕСТВО</span><select id="n-count"><option value="6">6 вариантов</option><option value="10">10 вариантов</option><option value="15">15 вариантов</option></select></label>
+          </div>
+          <div class="panel-actions"><button class="button button-light" id="make-names">Сгенерировать идеи <span>↗</span></button></div>
+          <div class="result-box" id="names-result" hidden><div class="result-head"><span>ИДЕИ НАЗВАНИЙ</span><span class="result-ready">● READY</span></div><div class="name-list" id="names-output"></div><button class="button button-outline copy-btn" data-copy="names-output" data-copy-mode="names">Копировать все <span>▣</span></button><p class="hint">Названия формируются локально из слов и шаблонов. Проверь доступность имени и товарных знаков перед использованием.</p></div>
+        </section>
+
+        <section class="tool-panel" id="panel-bio" hidden>
+          <p class="panel-intro">Собери описание профиля для Telegram, соцсетей или своего проекта.</p>
+          <div class="form-grid">
+            <label class="field field-wide"><span>ИМЯ / НАЗВАНИЕ ПРОЕКТА</span><input id="b-name" placeholder="Например: WVF Studio"></label>
+            <label class="field"><span>ТЕМА ПРОФИЛЯ</span><input id="b-topic" placeholder="Дизайн и технологии"></label>
+            <label class="field"><span>ПЛАТФОРМА</span><select id="b-platform"><option>Telegram</option><option>GitHub</option><option>YouTube</option><option>Instagram</option><option>Личный сайт</option></select></label>
+            <label class="field"><span>СТИЛЬ</span><select id="b-style"><option value="premium">Премиальный</option><option value="friendly">Дружелюбный</option><option value="expert">Экспертный</option><option value="minimal">Минималистичный</option></select></label>
+            <label class="field"><span>ЦЕЛЬ</span><select id="b-goal"><option>Делиться полезным контентом</option><option>Показывать свои проекты</option><option>Находить клиентов</option><option>Развивать сообщество</option><option>Представить себя</option></select></label>
+          </div>
+          <div class="panel-actions"><button class="button button-light" id="make-bio">Создать описание <span>↗</span></button></div>
+          <div class="result-box" id="bio-result" hidden><div class="result-head"><span>ТВОЁ ОПИСАНИЕ</span><span class="result-ready">● READY</span></div><pre id="bio-output"></pre><button class="button button-outline copy-btn" data-copy="bio-output">Копировать описание <span>▣</span></button></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="about-section" id="about"><div class="about-symbol">W<span>.</span></div><div><div class="eyebrow">BUILT FOR CREATORS</div><h2>Меньше рутины.<br><span class="metal-text">Больше идей.</span></h2><p>WVF TOOLS — независимый экспериментальный набор инструментов. Всё работает локально в браузере: без аккаунта, платных API и отправки введённых данных на сервер.</p></div></section>
+  </main>
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">W</span><span>WVF<span class="muted"> TOOLS</span></span></a><span>MADE TO CREATE <span class="silver-dot">✳</span></span><span>© <span id="year"></span> WVF TOOLS</span></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
